@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#15181B"/>
+  <g opacity=".08" stroke="#F4F1E9">
+    <path d="M0 72h1200M0 144h1200M0 216h1200M0 288h1200M0 360h1200M0 432h1200M0 504h1200M0 576h1200"/>
+    <path d="M72 0v630M144 0v630M216 0v630M288 0v630M360 0v630M432 0v630M504 0v630M576 0v630M648 0v630M720 0v630M792 0v630M864 0v630M936 0v630M1008 0v630M1080 0v630M1152 0v630"/>
+  </g>
+  <g transform="translate(72 72)">
+    <g fill="none" stroke="#F4F1E9" stroke-width="4"><rect width="32" height="32" rx="5"/><rect x="42" width="32" height="32" rx="5"/><rect y="42" width="32" height="32" rx="5"/></g>
+    <rect x="42" y="42" width="32" height="32" rx="5" fill="#FF6A21"/>
+  </g>
+  <text x="72" y="250" fill="#F4F1E9" font-family="Arial, sans-serif" font-size="104" font-weight="700" letter-spacing="-6">Археоплан</text>
+  <text x="72" y="370" fill="#FF6A21" font-family="Arial, sans-serif" font-size="64" font-weight="700" letter-spacing="-3">Снято в поле.</text>
+  <text x="72" y="447" fill="#F4F1E9" font-family="Arial, sans-serif" font-size="64" font-weight="700" letter-spacing="-3">Готово к отчёту.</text>
+  <text x="72" y="548" fill="#8F969C" font-family="monospace" font-size="22" letter-spacing="3">ПОЛЕВАЯ ФОТОФИКСАЦИЯ ДЛЯ АРХЕОЛОГОВ</text>
+  <rect x="1010" y="72" width="118" height="486" rx="16" fill="none" stroke="#246BFE" stroke-width="2" opacity=".75"/>
+  <path d="M1069 110v410M1030 315h78" stroke="#246BFE" stroke-width="2" opacity=".75"/>
+</svg>

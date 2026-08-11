@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#15181B">
+  <title>Археоплан — полевая фотофиксация для археологов</title>
+  <meta name="description" content="Археоплан связывает полевые фотографии с описанием, координатами и направлением съёмки и помогает подготовить альбом иллюстраций.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="Археоплан">
+  <meta property="og:title" content="Археоплан — полевая фотофиксация для археологов">
+  <meta property="og:description" content="Археоплан связывает полевые фотографии с описанием, координатами и направлением съёмки и помогает подготовить альбом иллюстраций.">
+  <meta property="og:image" content="assets/icons/og-archeoplan.svg">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Археоплан","description":"Система полевой фотофиксации, которая связывает фотографии с описанием, координатами и направлением съёмки.","inLanguage":"ru","offers":{"@type":"Offer","price":"1000","priceCurrency":"RUB","description":"Стоимость одного рабочего места в месяц после запуска."}}</script>
+  <script src="script.js" defer></script>
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+      (function(m,e,t,r,i,k,a){
+          m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+          m[i].l=1*new Date();
+          for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+          k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+      })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=111494010', 'ym');
+
+      ym(111494010, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/111494010" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
+</head>
+<body>
+<a class="skip-link" href="#main-content">К содержанию</a>
+
+<header class="site-header" data-header>
+  <div class="header-inner">
+    <a class="brand" href="#top" aria-label="Археоплан — на главную">
+      <svg class="brand-mark" viewBox="0 0 44 44" aria-hidden="true">
+        <rect x="2" y="2" width="18" height="18" rx="3"></rect>
+        <rect x="24" y="2" width="18" height="18" rx="3"></rect>
+        <rect x="2" y="24" width="18" height="18" rx="3"></rect>
+        <rect class="brand-mark-accent" x="24" y="24" width="18" height="18" rx="3"></rect>
+      </svg>
+      <span class="brand-copy">
+        <strong>Археоплан</strong>
+        <span>Полевая фотофиксация</span>
+      </span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Основная навигация">
+      <a href="#how-it-works">Как работает</a>
+      <a href="#field-control">В поле</a>
+      <a href="#album">Альбом</a>
+      <a href="#pricing">Тариф</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <button class="header-cta button button--orange" type="button" data-open-interest data-analytics="cta_click">
+      Оформить за 1 000 ₽/месяц
+    </button>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Открыть меню">
+      <span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Мобильная навигация" hidden>
+    <a href="#how-it-works">Как работает</a>
+    <a href="#field-control">В поле</a>
+    <a href="#album">Альбом</a>
+    <a href="#pricing">Тариф</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+</header>
+
+<main id="main-content">
+  <section class="hero section-dark coordinate-grid" id="top">
+    <div class="hero-glow hero-glow--orange" aria-hidden="true"></div>
+    <div class="hero-glow hero-glow--blue" aria-hidden="true"></div>
+    <div class="container hero-grid">
+      <div class="hero-copy" data-reveal>
+        <p class="eyebrow"><span class="status-dot"></span> Мобильная полевая фиксация · Набор пилотной группы</p>
+        <h1>Снято в поле.<br><span>Готово к отчёту.</span></h1>
+        <p class="hero-lead">Археоплан — система полевой фотофиксации для археологов. Она связывает снимки шурфов, раскопов, профилей, объектов и находок с описанием, координатами и направлением съёмки — прямо в момент работы. Затем система автоматически формирует альбом иллюстраций. </p>
+        <div class="hero-actions">
+          <button class="button button--orange button--large" type="button" data-open-interest data-analytics="cta_click">
+            Подключиться
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 6l4 4-4 4"></path></svg>
+          </button>
+          <a class="text-link" href="#problem">Посмотреть, как это работает <span aria-hidden="true">↓</span></a>
+        </div>
+        <p class="price-note">1 рабочее место — 1 000 ₽ в месяц <i></i> Облачное хранилище — 100 ₽ за 1 ГБ в месяц</p>
+      </div>
+
+      <div class="hero-visual" data-parallax-card data-reveal>
+        <div class="device-label"><span>АРХЕОПЛАН / ПОЛЕ</span><strong>СИНХР.</strong></div>
+        <figure class="photo-frame photo-frame--hero" data-photo-slot="PHOTO-01">
+          <img src="assets/images/Блок 0 фото 1.jpg" style="max-width: 300px;">
+        </figure>
+        <div class="coordinate-tag coordinate-tag--top">47.2215° N</div>
+        <div class="coordinate-tag coordinate-tag--side">39.7147° E</div>
+      </div>
+    </div>
+    <div class="hero-manifest">
+      <div class="container manifest-inner">
+        <p>Каждый кадр знает своё место.</p>
+        <div class="manifest-path"><span>ПРОЕКТ</span><i></i><span>ОБЪЕКТ</span><i></i><span>СЛОЙ</span><i></i><span>КАДР</span></div>
+        <strong>Снято в поле. Готово к отчёту.</strong>
+      </div>
+    </div>
+  </section>
+
+  <section class="problem section-light" id="problem" data-story>
+    <div class="container section-heading" data-reveal>
+      <p class="section-index">01 / ПОЛЕВОЙ ДЕНЬ</p>
+      <h2>Как Археоплан усиливает археолога</h2>
+    </div>
+    <div class="container story-layout">
+      <div class="story-copy">
+        <p>- Не нужно спускаться в шурф, чтобы перекладывать информационные таблички. Все данные вносятся до съёмки и автоматически привязываются к кадру.</p>
+        <p>- Не нужно вести фотожурнал вручную: сведения о кадрах сохраняются в системе.</p>
+        <p>- Не нужно переносить фотографии на компьютер и разбирать их по папкам. Археоплан сам сортирует снимки и связывает их с описаниями.</p>
+        <p>- При наличии интернета фотографии сразу отправляются в личный кабинет и становятся доступны камеральной группе — вместе с описаниями и пометками археолога.</p>
+        <p>- Не нужно вручную верстать альбом иллюстраций. Выберите нужные кадры — система пронумерует иллюстрации, подставит описания и подготовит готовый альбом для скачивания.</p>
+        <blockquote>Проблема не в фотографии. Проблема в том, что описание живёт отдельно от кадра.</blockquote>
+        <p class="story-resolution">Археоплан соединяет их в момент съёмки.</p>
+        <div class="story-progress" aria-hidden="true"><span></span></div>
+      </div>
+      <div class="story-stage" aria-label="Переход от хаотичных фотографий к структурированной фотофиксации">
+        <div class="story-status"><span>СОСТОЯНИЕ</span><strong data-story-label>НЕРАЗОБРАННОЕ</strong></div>
+        <figure class="chaos-card chaos-card--one" data-photo-slot="PHOTO-02">
+          <img src="assets/images/блок 01 фото 1.jpg" style="width: 100%;">
+          <figcaption><span class="filename">IMG_4872.JPG</span><span class="metadata">ШУРФ 6 · Общий вид. Вид с Ю.</span></figcaption>
+        </figure>
+        <figure class="chaos-card chaos-card--two" data-photo-slot="PHOTO-03">
+          <img src="assets/images/блок 01 фото 2.jpg" style="width: 100%;">
+          <figcaption><span class="filename">IMG_4873.JPG</span><span class="metadata">ШУРФ 6 · После рекультивации. Вид с Ю</span></figcaption>
+        </figure>
+        <div class="metadata-cloud" aria-hidden="true" style="display: none;">
+          <span>СЛОЙ 02</span><span>СЕВЕРНЫЙ БОРТ</span><span>047°</span>
+        </div>
+      </div>
+      <div class="story-triggers" aria-hidden="true">
+        <span data-story-step="0"></span><span data-story-step="1"></span><span data-story-step="2"></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="workflow section-dark coordinate-grid" id="how-it-works">
+    <div class="container section-heading section-heading--dark" data-reveal>
+      <p class="section-index">02 / КАК РАБОТАЕТ</p>
+      <div>
+        <h2>Выберите описание один раз. Снимите всю серию.</h2>
+        <p class="section-lead">Для следующего фото используются уже введенные данные, нужно изменить только те, которые действительно поменялись.</p>
+      </div>
+    </div>
+
+    <div class="container workflow-layout">
+      <div class="phone-column">
+        <div class="pilot-badge"><span></span> Интерфейс пилотной версии</div>
+        <div class="phone-mockup" aria-live="polite">
+          <div class="phone-topbar"><span>09:41</span><span>АРХЕОПЛАН</span><span>● 87%</span></div>
+          <div class="phone-screen">
+            <div class="phone-fields" data-phone-fields style="padding-top: 0;">
+              <div><span>ПРОЕКТ</span><strong>АРХ-26-014</strong></div>
+              <div><span>ОБЪЕКТ</span><strong>Участок «Северный»</strong></div>
+              <div><span>СТАТУС</span><strong class="phone-accent">ВЫБРАНО</strong></div>
+            </div>
+          </div>
+          <div class="phone-homebar" style="display: none;"></div>
+        </div>
+      </div>
+
+      <ol class="workflow-steps">
+        <li class="workflow-step is-active" data-workflow-step="0">
+          <button class="step-select" type="button">
+            <span class="step-number">01</span>
+            <span class="step-body"><strong>Выберите объект</strong><span>Разведки или раскопки.</span><small>АРХ-26-014 / УЧАСТОК «СЕВЕРНЫЙ»</small></span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"></path></svg>
+          </button>
+        </li>
+        <li class="workflow-step" data-workflow-step="1">
+          <button class="step-select" type="button">
+            <span class="step-number">02</span>
+            <span class="step-body"><strong>Выберите вид фотографии</strong><span>Общий вид, борт, профиль, находка, рабочий момент или рекультивация.</span><small>ВИД / НАПРАВЛЕНИЕ / АЗИМУТ</small></span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"></path></svg>
+          </button>
+        </li>
+        <li class="workflow-step" data-workflow-step="2">
+          <button class="step-select" type="button">
+            <span class="step-number">03</span>
+            <span class="step-body"><strong>Укажите описание</strong><span>Шурф, раскоп, квадрат, пласт, слой или находка.</span><small>ШУРФ 12 / СЛОЙ 02 / СЕВЕРНЫЙ БОРТ</small></span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"></path></svg>
+          </button>
+        </li>
+        <li class="workflow-step" data-workflow-step="3">
+          <button class="step-select" type="button">
+            <span class="step-number">04</span>
+            <span class="step-body"><strong>Снимите серию</strong><span>Все кадры автоматически связываются с выбранным описанием.</span><small>7 КАДРОВ / 1 ОПИСАНИЕ / 0 ПОВТОРНОГО ВВОДА</small></span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"></path></svg>
+          </button>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="field-control section-light" id="field-control">
+    <div class="container section-heading" data-reveal>
+      <p class="section-index">03 / КОНТРОЛЬ В ПОЛЕ</p>
+      <h2>Всё важное остаётся связано с оригиналом.</h2>
+    </div>
+
+    <div class="container field-layout">
+      <div class="field-photo-wrap" data-reveal>
+        <figure class="photo-frame photo-frame--field" data-photo-slot="PHOTO-04">
+	        <img src="assets/images/Блок 4.jpg">
+          <figcaption class="field-caption">
+            <div><span>ШУРФ 6</span><strong>Cеверный борт · вид с Ю</strong></div>
+            <div class="field-direction"><span>НАПРАВЛЕНИЕ</span><strong>СВ · 047°</strong></div>
+          </figcaption>
+        </figure>
+        <div class="field-status-card">
+          <span class="field-status-icon"></span>
+          <div><small>ПОЛНОТА ФИКСАЦИИ</small><strong>7 из 9</strong></div>
+          <span class="field-status-tail">2 вида осталось</span>
+        </div>
+      </div>
+
+      <div class="feature-grid">
+        <article class="feature-card" data-reveal>
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4zM4 9h16M9 4v16"></path></svg>
+          </div>
+          <span class="feature-no">01</span>
+          <h3>Каждый кадр получает паспорт</h3>
+          <p>Проект, слой, вид кадра, координаты, направление съемки остаются связаны с оригиналом.</p>
+        </article>
+        <article class="feature-card feature-card--blue" data-reveal>
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h3l1.5-2h5L16 7h3v12H5zM12 10a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"></path></svg>
+          </div>
+          <span class="feature-no">02</span>
+          <h3>Приложение знает, что ещё не снято</h3>
+          <p>Пропущенный ракурс всегда виден в приложении: «Шурф № 12 — снято 7 из 9 видов».</p>
+        </article>
+        <article class="feature-card" data-reveal>
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"></circle><path d="m15.5 8.5-2 5-5 2 2-5z"></path></svg>
+          </div>
+          <span class="feature-no">03</span>
+          <h3>Север не вспоминают вечером</h3>
+          <p>Направление съемки можно определить автоматически<br><br>Направление и азимут фиксируются с помощью встроенного компаса смартфона.<br><br>При необходимости направление подтверждается вручную.</p>
+        </article>
+        <article class="feature-card feature-card--orange" data-reveal>
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18h10a4 4 0 0 0 .4-8A6 6 0 0 0 6 8.2 5 5 0 0 0 7 18zM9 14h6M12 11v6"></path></svg>
+          </div>
+          <span class="feature-no">04</span>
+          <h3>Нет связи — работа продолжается</h3>
+          <p>Материалы сохраняются на смартфоне, синхронизируются позже и выгружаются структурированными папками.</p>
+        </article>
+      </div>
+    </div>
+
+    <div class="container command-strip" data-reveal>
+      <span class="command-prompt">&gt;_</span>
+      <strong>Поле снимает. Камеральная группа уже работает.</strong>
+      <p>После синхронизации руководитель видит полноту, а камеральная группа проверяет подписи и работает с документацией.</p>
+      <span class="command-status"><i></i> СИНХРОНИЗИРОВАНО</span>
+    </div>
+  </section>
+
+  <section class="album section-dark" id="album" data-album-transform>
+    <div class="container album-heading" data-reveal>
+      <div>
+        <p class="section-index">04 / АЛЬБОМ ИЛЛЮСТРАЦИЙ</p>
+        <h2>Альбом иллюстраций создается автоматически.</h2>
+      </div>
+      <p>Выберите пригодные фотографии. Археоплан подставит сохранённые в поле данные, сформирует подписи, расставит сквозную нумерацию и подготовит PDF по выбранному шаблону.</p>
+    </div>
+
+    <div class="container album-journey" data-reveal>
+      <article class="album-state album-state--source">
+        <span class="state-label">01 / ИСХОДНЫЙ КАДР</span>
+        <figure class="album-photo" data-photo-slot="PHOTO-05">
+          <img src="assets/images/Блок 4.jpg" style="max-width: 400px">
+        </figure>
+        <div class="album-file"><span>IMG_4872.JPG</span><strong>ОРИГИНАЛ</strong></div>
+      </article>
+      <div class="album-arrow" aria-hidden="true"><span></span><svg viewBox="0 0 24 24"><path d="M5 12h14M15 8l4 4-4 4"></path></svg></div>
+      <article class="album-state album-state--caption">
+        <span class="state-label">02 / ПОДПИСЬ</span>
+        <div class="caption-card">
+          <img src="assets/images/Блок 4.jpg"  style="max-width: 300px">
+          <p>Шурф №6, северный борт, вид с Ю</p>
+          <div><span>047°</span><span>47.2215° N</span></div>
+        </div>
+      </article>
+      <div class="album-arrow" aria-hidden="true"><span></span><svg viewBox="0 0 24 24"><path d="M5 12h14M15 8l4 4-4 4"></path></svg></div>
+      <article class="album-state album-state--pdf">
+        <span class="state-label">03 / СТРАНИЦА PDF</span>
+        <div class="pdf-page">
+          <small style="font-size: 14px;">АЛЬБОМ ИЛЛЮСТРАЦИЙ</small>
+          <span class="pdf-number">17</span>
+          <img src="assets/images/Блок 4.jpg"  style="max-width: 350px">
+          <p>Рис. 17. Территория, отведенная под хозяйственное освоение в рамках проекта:
+          “Строительство и реконструкция объектов водоснабжения и водоотведения в
+          северной части г. Элиста Республики Калмыкия”, расположенной по адресу:
+          Республика Калмыкия, Элистинский городской округ, г. Элиста”. Шурф 6. С
+          борт. Вид с Ю.</p>
+          <footer><span>АРХ-26-014</span><span>12 / 48</span></footer>
+        </div>
+      </article>
+    </div>
+
+    <div class="container album-steps">
+      <span>1. Отметьте кадры</span><span>2. Проверьте подписи</span><span>3. Измените порядок</span><span>4. Сформируйте PDF</span>
+    </div>
+    <div class="container album-statement" data-reveal>Описание вводится один раз — <em>в поле.</em> Дальше оно следует за фотографией.</div>
+  </section>
+
+  <section class="pricing section-light" id="pricing">
+    <div class="container section-heading" data-reveal>
+      <p class="section-index">05 / ЦЕННОСТЬ И ТАРИФ</p>
+      <h2>Не только быстрее. Контролируемее.</h2>
+    </div>
+    <div class="container benefit-row" data-reveal>
+      <div><span>01</span><strong>Меньше потерянных фотографий</strong></div>
+      <div><span>02</span><strong>Единая методика для команды</strong></div>
+      <div><span>03</span><strong>Раннее начало камеральной работы</strong></div>
+      <div><span>04</span><strong>Структурированный архив</strong></div>
+    </div>
+
+    <div class="container pricing-card" data-reveal>
+      <div class="pricing-main">
+        <p class="section-index section-index--light">ПРОСТОЙ ТАРИФ · БЕЗ ОПЛАТЫ ДО ЗАПУСКА</p>
+        <h2>Археоплан</h2>
+        <h3 style="margin-top: 0px;">Заявки на доступ к системе принимаются от организаций и физических лиц (археологов).</h3>
+        <div class="price-line"><strong>1 000 ₽</strong><span>/ рабочее место<br>в месяц</span></div>
+        <p class="storage-price"><span>+</span> 100 ₽ за 1 ГБ облачного хранения в месяц. Объём определяется вашими потребностями. </p>
+        <button class="button button--orange button--large" type="button" data-open-interest data-analytics="cta_click">Оформить за 1 000 ₽/месяц</button>
+        <small>Сейчас оплата не принимается. После заявки мы зафиксируем ваш интерес и пригласим в пилотную группу.</small>
+      </div>
+      <div class="pricing-includes">
+        <span>В ТАРИФ ВХОДЯТ</span>
+        <ul>
+          <li>Полевая фотофиксация</li>
+          <li>Работа без интернета</li>
+          <li>Метаданные и контроль полноты</li>
+          <li>Командный доступ</li>
+          <li>Структурированная выгрузка</li>
+          <li>Формирование PDF-альбома</li>
+        </ul>
+        <div class="pilot-lock"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10V8a5 5 0 0 1 10 0v2M5 10h14v10H5z"></path></svg><span><strong>Цена фиксируется заявкой</strong><small>Оплата — только после запуска</small></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-final section-dark coordinate-grid" id="faq">
+    <div class="container faq-layout">
+      <div class="faq-heading" data-reveal>
+        <p class="section-index">06 / FAQ</p>
+        <h2>Коротко о важном.</h2>
+        <p>Если вопроса нет в списке, оставьте заявку — обсудим сценарий вашей полевой команды перед пилотом.</p>
+      </div>
+      <div class="faq-list" data-reveal>
+        <details open>
+          <summary><span>01</span> Приложение уже можно установить?<i></i></summary>
+          <p>Сейчас формируется пилотная группа. После заявки мы сообщим дату тестирования. Оплата до запуска не списывается.</p>
+        </details>
+        <details>
+          <summary><span>02</span> Можно ли работать полностью без интернета?<i></i></summary>
+          <p>Да. Материалы сохраняются на смартфоне, затем синхронизируются или выгружаются структурированными папками.</p>
+        </details>
+        <details>
+          <summary><span>03</span> Изменяются ли оригинальные фотографии?<i></i></summary>
+          <p>Нет. Подписи, рамки и направление создаются на отдельной производной копии.</p>
+        </details>
+        <details>
+          <summary><span>04</span> Можно ли забрать все данные?<i></i></summary>
+          <p>Да. Проект выгружается с оригиналами, описаниями, метаданными и структурой папок.</p>
+        </details>
+      </div>
+    </div>
+
+    <div class="container final-cta" data-reveal>
+      <div>
+        <p class="section-index">ПИЛОТНАЯ ГРУППА</p>
+        <h2>Пусть полевой день заканчивается в поле.</h2>
+      </div>
+      <div class="final-cta-copy">
+        <p>Подайте заявку на ранний доступ и зафиксируйте стоимость — 1 000 ₽ в месяц за рабочее место. Мы пригласим вас в пилотную группу.</p>
+        <button class="button button--orange button--large" type="button" data-open-interest data-analytics="cta_click">Оформить за 1 000 ₽/месяц</button>
+        <small>Без оплаты до запуска пилотной версии.</small>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a class="brand brand--footer" href="#top">
+      <svg class="brand-mark" viewBox="0 0 44 44" aria-hidden="true">
+        <rect x="2" y="2" width="18" height="18" rx="3"></rect><rect x="24" y="2" width="18" height="18" rx="3"></rect>
+        <rect x="2" y="24" width="18" height="18" rx="3"></rect><rect class="brand-mark-accent" x="24" y="24" width="18" height="18" rx="3"></rect>
+      </svg>
+      <span class="brand-copy"><strong>Археоплан</strong><span>Полевая фотофиксация для археологов</span></span>
+    </a>
+    <p>© <span data-current-year>2026</span> Археоплан</p>
+    <nav class="legal-links" aria-label="Юридическая информация" hidden></nav>
+  </div>
+</footer>
+
+<button class="mobile-fixed-cta" type="button" data-open-interest data-analytics="cta_click">Оформить за 1 000 ₽/месяц</button>
+
+<dialog class="interest-dialog" id="interest-dialog" aria-labelledby="dialog-title">
+  <div class="dialog-shell">
+    <button class="dialog-close" type="button" data-dialog-close aria-label="Закрыть форму">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"></path></svg>
+    </button>
+    <div class="dialog-intro">
+      <p class="section-index">ПИЛОТНЫЙ ДОСТУП</p>
+      <h2 id="dialog-title">Зафиксировать цену 1 000 ₽ в месяц</h2>
+      <p>Археоплан готовится к пилотному запуску. Сейчас мы не принимаем оплату. Оставьте заявку, если готовы подключить приложение после проверки пилотной версии и заявленных функций.</p>
+    </div>
+    <form class="interest-form" id="interest-form" novalidate>
+      <div class="form-grid">
+        <label class="field">
+          <span>Имя <b aria-hidden="true">*</b></span>
+          <input name="name" type="text" autocomplete="name" required aria-describedby="error-name">
+          <small class="field-error" id="error-name"></small>
+        </label>
+        <label class="field">
+          <span>Организация <b aria-hidden="true">*</b></span>
+          <input name="organization" type="text" autocomplete="organization" required aria-describedby="error-organization">
+          <small class="field-error" id="error-organization"></small>
+        </label>
+        <label class="field">
+          <span>Должность</span>
+          <input name="role" type="text" autocomplete="organization-title" aria-describedby="error-role">
+          <small class="field-error" id="error-role"></small>
+        </label>
+        <label class="field">
+          <span>Телефон или email <b aria-hidden="true">*</b></span>
+          <input name="contact" type="text" autocomplete="email" inputmode="email" required aria-describedby="error-contact">
+          <small class="field-error" id="error-contact"></small>
+        </label>
+        <label class="field field--full">
+          <span>Количество рабочих мест <b aria-hidden="true">*</b></span>
+          <input name="seats" type="number" min="1" max="999" inputmode="numeric" required aria-describedby="error-seats">
+          <small class="field-error" id="error-seats"></small>
+        </label>
+      </div>
+      <label class="consent-field">
+        <input name="intent" type="checkbox" required aria-describedby="error-intent">
+        <span class="check-box" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="m3 8 3 3 7-7"></path></svg></span>
+        <span>При наличии описанного функционала наша организация готова рассмотреть подключение по цене 1 000 ₽ в месяц за рабочее место и 100 ₽ за 1 ГБ облачного хранения.</span>
+      </label>
+      <small class="field-error field-error--consent" id="error-intent"></small>
+      <div class="form-legal" data-form-legal hidden></div>
+      <button class="button button--orange button--large form-submit" type="submit" data-analytics="form_submit_success">
+        Подтвердить интерес
+      </button>
+      <p class="form-status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</dialog>
+
+</body>
+</html>
