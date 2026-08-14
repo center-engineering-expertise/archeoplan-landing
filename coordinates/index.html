@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#15181b">
+  <title>Координаты участка по кадастровому номеру — Археоплан</title>
+  <meta name="description" content="Бесплатный инструмент для археологов: получите координаты поворотных точек земельного участка по кадастровому номеру, скопируйте таблицу или скачайте Excel.">
+  <meta name="robots" content="index,follow">
+  <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css">
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIINfQ3ynEzOo3d8OVsG/0qNq7EZEnCWPkHk="
+    crossorigin=""
+  >
+  <link rel="stylesheet" href="coordinates.css">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
+  <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js" defer></script>
+  <script src="config.js" defer></script>
+  <script src="coordinates.js" defer></script>
+</head>
+<body class="coordinates-page">
+<a class="skip-link" href="#tool-form">Перейти к поиску участка</a>
+
+<header class="site-header" data-header>
+  <div class="header-inner">
+    <a class="brand" href="../" aria-label="Археоплан — на главную">
+      <svg class="brand-mark" viewBox="0 0 44 44" aria-hidden="true">
+        <rect x="2" y="2" width="18" height="18" rx="3"></rect>
+        <rect x="24" y="2" width="18" height="18" rx="3"></rect>
+        <rect x="2" y="24" width="18" height="18" rx="3"></rect>
+        <rect class="brand-mark-accent" x="24" y="24" width="18" height="18" rx="3"></rect>
+      </svg>
+      <span class="brand-copy">
+        <strong>Археоплан</strong>
+        <span>Инструмент для отчёта</span>
+      </span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Навигация по странице">
+      <a href="#tool-form">Получить координаты</a>
+      <a href="#results" data-results-nav hidden>Результаты</a>
+      <a href="#about-tool">О сервисе</a>
+    </nav>
+
+    <a class="header-cta button tool-header-button" href="../">
+      На сайт Археоплана
+    </a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Открыть меню">
+      <span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Мобильная навигация" hidden>
+    <a href="#tool-form">Получить координаты</a>
+    <a href="#results" data-results-nav hidden>Результаты</a>
+    <a href="#about-tool">О сервисе</a>
+    <a href="../">На сайт Археоплана</a>
+  </nav>
+</header>
+
+<main id="main-content">
+  <section class="tool-hero section-dark coordinate-grid">
+    <div class="tool-glow tool-glow--orange" aria-hidden="true"></div>
+    <div class="tool-glow tool-glow--blue" aria-hidden="true"></div>
+    <div class="container tool-hero-grid">
+      <div class="tool-intro" data-reveal>
+        <p class="eyebrow"><span class="status-dot"></span> Бесплатный инструмент · Без регистрации</p>
+        <h1>Координаты границ участка <span>по кадастровому номеру.</span></h1>
+        <p class="tool-lead">Введите один кадастровый номер или список. Сервис найдёт участки, выделит поворотные точки, покажет границы на карте и подготовит координаты для Excel или Word.</p>
+        <div class="tool-capabilities" aria-label="Возможности сервиса">
+          <span><i>01</i> Один номер или список</span>
+          <span><i>02</i> Полигоны и точки на карте</span>
+          <span><i>03</i> Копирование и Excel</span>
+        </div>
+      </div>
+
+      <form class="cadastre-form" id="tool-form" novalidate data-reveal>
+        <div class="form-terminal-bar">
+          <span>АРХЕОПЛАН / КАДАСТР</span>
+          <strong><i></i> ГОТОВ К ЗАПРОСУ</strong>
+        </div>
+        <div class="cadastre-form-body">
+          <label for="cadastre-input">
+            <span>КАДАСТРОВЫЕ НОМЕРА</span>
+            <small>Каждый номер — с новой строки, через пробел, запятую или точку с запятой</small>
+          </label>
+          <textarea
+            id="cadastre-input"
+            name="cadastral_numbers"
+            rows="7"
+            spellcheck="false"
+            autocomplete="off"
+            placeholder="61:44:0050505:14&#10;61:44:0050504:64"
+            aria-describedby="input-help input-error"
+            required
+          ></textarea>
+          <div class="input-meta" id="input-help">
+            <span data-number-count>0 номеров</span>
+            <button type="button" class="inline-action" data-fill-example>Заполнить пример</button>
+          </div>
+          <p class="form-error" id="input-error" role="alert"></p>
+          <div class="form-actions">
+            <button class="button button--orange button--large search-button" type="submit">
+              <span data-submit-label>Получить данные участков</span>
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 6l4 4-4 4"></path></svg>
+            </button>
+            <button class="clear-button" type="button" data-clear-form>Очистить</button>
+          </div>
+          <p class="request-status" data-request-status role="status" aria-live="polite"></p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="results-section section-light" id="results" hidden>
+    <div class="container results-heading">
+      <div>
+        <p class="section-index">РЕЗУЛЬТАТ ЗАПРОСА</p>
+        <h2>Границы и поворотные точки.</h2>
+      </div>
+      <div class="results-summary">
+        <strong data-results-count>0 участков</strong>
+        <span data-points-count>0 точек</span>
+      </div>
+    </div>
+
+    <div class="container missing-notice" data-missing-notice hidden></div>
+
+    <div class="container map-layout">
+      <div class="map-card">
+        <div class="map-toolbar">
+          <div class="map-toolbar-copy">
+            <span>КАРТА УЧАСТКОВ</span>
+            <small>Нажмите на участок или поворотную точку</small>
+          </div>
+          <div class="map-toolbar-actions">
+            <label class="map-style-field" for="map-style-select">
+              <span>ПОДЛОЖКА</span>
+              <select id="map-style-select" data-map-style aria-describedby="map-style-description">
+                <option>Загрузка карт…</option>
+              </select>
+            </label>
+            <button type="button" class="map-fit-button" data-fit-map>Показать все</button>
+          </div>
+        </div>
+        <p class="map-style-description" id="map-style-description" data-map-style-description></p>
+        <div class="map-viewport">
+          <div id="cadastre-map" aria-label="Интерактивная карта кадастровых участков и поворотных точек"></div>
+          <div class="map-legend" aria-hidden="true">
+            <span><i class="legend-polygon"></i> Граница участка</span>
+            <span><i class="legend-point"></i> Поворотная точка</span>
+          </div>
+          <p class="map-load-status" data-map-load-status role="status" aria-live="polite" hidden></p>
+        </div>
+      </div>
+
+      <aside class="parcel-panel" data-parcel-panel data-state="empty" aria-live="polite">
+        <div class="parcel-panel-empty" data-parcel-empty>
+          <span class="panel-crosshair" aria-hidden="true"></span>
+          <p>Выберите участок на карте</p>
+          <small>Здесь появятся все характеристики, полученные из кадастрового API.</small>
+        </div>
+        <div class="parcel-panel-content" data-parcel-content hidden>
+          <div class="parcel-panel-head">
+            <div>
+              <span>КАДАСТРОВЫЙ УЧАСТОК</span>
+              <h3 data-parcel-number></h3>
+            </div>
+            <i data-parcel-color></i>
+          </div>
+          <dl class="parcel-properties" data-parcel-properties></dl>
+        </div>
+      </aside>
+    </div>
+
+    <div class="container coordinates-output">
+      <div class="output-head">
+        <div>
+          <p class="section-index">ТАБЛИЦА КООРДИНАТ</p>
+          <h2>Готово для отчёта.</h2>
+          <p>Координаты приведены в WGS 84: широта и долгота в десятичных градусах.</p>
+        </div>
+        <div class="output-actions">
+          <button class="button copy-all-button" type="button" data-copy-all>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8h11v11H8zM5 16H4V5h11v1"></path></svg>
+            Скопировать таблицу
+          </button>
+          <button class="button button--orange" type="button" data-download-xlsx>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M8 11l4 4 4-4M5 20h14"></path></svg>
+            Скачать Excel
+          </button>
+        </div>
+      </div>
+
+      <div class="parcel-copy-actions" data-parcel-copy-actions></div>
+
+      <div class="coordinates-table-wrap">
+        <table class="coordinates-table">
+          <thead>
+            <tr>
+              <th scope="col">Кадастровый номер</th>
+              <th scope="col">Контур</th>
+              <th scope="col">Точка</th>
+              <th scope="col">Широта (X)</th>
+              <th scope="col">Долгота (Y)</th>
+            </tr>
+          </thead>
+          <tbody data-coordinates-body></tbody>
+        </table>
+      </div>
+      <p class="copy-status" data-copy-status role="status" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <section class="about-tool section-dark coordinate-grid" id="about-tool">
+    <div class="container about-tool-grid">
+      <div>
+        <p class="section-index">О СЕРВИСЕ</p>
+        <h2>Один из инструментов Археоплана.</h2>
+      </div>
+      <div class="about-tool-copy">
+        <p>Мы сделали этот сервис для задач, которые возникают при подготовке археологических отчётов. Археоплан решает следующую часть процесса: связывает полевые фотографии с описанием, координатами и направлением съёмки, а затем помогает сформировать альбом иллюстраций.</p>
+        <a class="button button--orange button--large" href="../">Узнать об Археоплане</a>
+        <small>Сведения сервиса носят справочный характер. Перед включением данных в официальный отчёт сверяйте их с актуальными сведениями Роскадастра и ЕГРН.</small>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a class="brand brand--footer" href="../">
+      <svg class="brand-mark" viewBox="0 0 44 44" aria-hidden="true">
+        <rect x="2" y="2" width="18" height="18" rx="3"></rect><rect x="24" y="2" width="18" height="18" rx="3"></rect>
+        <rect x="2" y="24" width="18" height="18" rx="3"></rect><rect class="brand-mark-accent" x="24" y="24" width="18" height="18" rx="3"></rect>
+      </svg>
+      <span class="brand-copy"><strong>Археоплан</strong><span>Полевая фотофиксация для археологов</span></span>
+    </a>
+    <p>© <span data-current-year>2026</span> Археоплан</p>
+  </div>
+</footer>
+
+<dialog class="point-dialog" id="point-dialog" aria-labelledby="point-dialog-title">
+  <button class="point-dialog-close" type="button" data-point-dialog-close aria-label="Закрыть окно">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"></path></svg>
+  </button>
+  <div class="point-dialog-kicker">ПОВОРОТНАЯ ТОЧКА</div>
+  <h2 id="point-dialog-title" data-point-title></h2>
+  <div class="point-coordinates">
+    <div><span>ШИРОТА (X)</span><strong data-point-lat></strong></div>
+    <div><span>ДОЛГОТА (Y)</span><strong data-point-lng></strong></div>
+  </div>
+  <button class="button button--orange" type="button" data-copy-point>Скопировать координаты</button>
+  <p data-point-copy-status role="status" aria-live="polite"></p>
+</dialog>
+</body>
+</html>

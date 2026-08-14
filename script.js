@@ -96,6 +96,9 @@ const SITE_CONFIG = {
       openDialog(button);
     });
   });
+  document.querySelectorAll("[data-coordinate-tool]").forEach((link) => {
+    link.addEventListener("click", () => track("coordinate_tool_click"));
+  });
   closeButton?.addEventListener("click", closeDialog);
   dialog?.addEventListener("click", (event) => {
     const box = dialog.getBoundingClientRect();
@@ -353,18 +356,21 @@ const SITE_CONFIG = {
     });
   });
 
-  const parallaxCard = document.querySelector("[data-parallax-card]");
-  if (parallaxCard && !reducedMotion.matches) {
-    parallaxCard.addEventListener("pointermove", (event) => {
-      const rect = parallaxCard.getBoundingClientRect();
-      const x = (event.clientX - rect.left) / rect.width - 0.5;
-      const y = (event.clientY - rect.top) / rect.height - 0.5;
-      parallaxCard.style.setProperty("--ry", `${x * 5}deg`);
-      parallaxCard.style.setProperty("--rx", `${y * -5}deg`);
-    });
-    parallaxCard.addEventListener("pointerleave", () => {
-      parallaxCard.style.setProperty("--ry", "0deg");
-      parallaxCard.style.setProperty("--rx", "0deg");
+  const parallaxCards = document.querySelectorAll("[data-parallax-card]");
+  if (parallaxCards.length && !reducedMotion.matches) {
+    parallaxCards.forEach((parallaxCard) => {
+      const tilt = Number(parallaxCard.dataset.parallaxTilt) || 5;
+      parallaxCard.addEventListener("pointermove", (event) => {
+        const rect = parallaxCard.getBoundingClientRect();
+        const x = (event.clientX - rect.left) / rect.width - 0.5;
+        const y = (event.clientY - rect.top) / rect.height - 0.5;
+        parallaxCard.style.setProperty("--ry", `${x * tilt}deg`);
+        parallaxCard.style.setProperty("--rx", `${y * -tilt}deg`);
+      });
+      parallaxCard.addEventListener("pointerleave", () => {
+        parallaxCard.style.setProperty("--ry", "0deg");
+        parallaxCard.style.setProperty("--rx", "0deg");
+      });
     });
   }
 
