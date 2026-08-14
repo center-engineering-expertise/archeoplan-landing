@@ -153,7 +153,7 @@ const SITE_CONFIG = {
     let valid = true;
 
     setError(fields.name, fields.name.value.trim().length >= 2 ? "" : "Укажите имя.");
-    setError(fields.organization, fields.organization.value.trim().length >= 2 ? "" : "Укажите организацию.");
+    // setError(fields.organization, fields.organization.value.trim().length >= 2 ? "" : "Укажите организацию.");
     setError(fields.contact, validContact(fields.contact.value.trim()) ? "" : "Введите телефон или корректный email.");
     const seats = Number(fields.seats.value);
     setError(fields.seats, Number.isInteger(seats) && seats >= 1 && seats <= 999 ? "" : "Укажите число от 1 до 999.");
