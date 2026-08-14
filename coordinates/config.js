@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const localHostnames = new Set(["", "localhost", "127.0.0.1"]);
+  const localHostnames = new Set(["", "localhost", "127.0.0.1", "193.93.121.145"]);
 
   window.ARCHEOPLAN_CADASTRE_CONFIG = {
     // На опубликованном сайте запрос идёт через тот же домен.
