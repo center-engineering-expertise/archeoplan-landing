@@ -555,6 +555,7 @@
 
     const worldBounds = [[-WEB_MERCATOR_LATITUDE_LIMIT, -180], [WEB_MERCATOR_LATITUDE_LIMIT, 180]];
     state.map = global.L.map(mapNode, {
+      attributionControl: false,
       zoomControl: false,
       preferCanvas: true,
       minZoom: mapConfig.minZoom,
