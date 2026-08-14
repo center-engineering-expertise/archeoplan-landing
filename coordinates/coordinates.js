@@ -243,7 +243,7 @@
   if (typeof document === "undefined") return;
 
   const config = {
-    endpoint: "/api/getCadastrCoord",
+    endpoint: "http://193.93.121.145/api/getCadastrCoord",
     maxCadastralNumbers: 50,
     requestTimeoutMs: 60000,
     map: {
