@@ -6,9 +6,10 @@
   window.ARCHEOPLAN_CADASTRE_CONFIG = {
     // На опубликованном сайте запрос идёт через тот же домен.
     // Для локальной разработки используется адрес из переданного API-метода.
-    endpoint: localHostnames.has(window.location.hostname)
-      ? "http://193.93.121.145/api/getCadastrCoord"
-      : "/api/getCadastrCoord",
+    // endpoint: localHostnames.has(window.location.hostname)
+    //   ? "http://193.93.121.145/api/getCadastrCoord"
+    //   : "/api/getCadastrCoord",
+    endpoint: "http://193.93.121.145/api/getCadastrCoord",
     maxCadastralNumbers: 50,
     requestTimeoutMs: 60000,
     map: {
