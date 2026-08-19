@@ -208,7 +208,7 @@ const SITE_CONFIG = {
         mode: "no-cors",
         body: payload,
       });
-      if (!response.ok) throw new Error("Request failed");
+      // if (!response.ok) throw new Error("Request failed");
       form.reset();
       if (status) {
         status.textContent = "Спасибо. Интерес зафиксирован.";
