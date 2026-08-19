@@ -205,7 +205,8 @@ const SITE_CONFIG = {
       const payload = new FormData(form);
       const response = await fetch(SITE_CONFIG.formEndpoint, {
         method: "POST",
-        mode: "no-cors",
+        // mode: "no-cors",
+        redirect: "manual",
         body: payload,
       });
       // if (!response.ok) throw new Error("Request failed");
